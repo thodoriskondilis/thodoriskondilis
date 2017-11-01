@@ -10,14 +10,26 @@
     Meaning in between, an advertisement that appears in a separate browser window while you wait for a Web page to load. Interstitials are more likely to contain large graphics, streaming presentations, and applets than conventional banner ads, and some studies have found that more users click on interstitials than on banner ads. Some users, however, have complained that interstitials slow access to destination pages.
     An example of interstitial ad:
 </p>
-<script id="minimob_mobile_web_options">
-  siteId = '59e7464b000074';
-  adzoneId = '59f337f2000083';
-  userId = '1373672288';
-  dev_settings = {
-    adserver_endpoint: 'http://bidder-dev.rtad.bid',
+
+<script>
+  var dev_settings = {
+    adserver_endpoint : 'http://bidder-dev.rtad.bid',
     x_debug_ip : '4.0.0.0'
   };
+  (function(w) {
+    var instanceid = typeof w.mm_gen === 'undefined'?1:w.mm_gen+1;w.mm_gen = instanceid;
+    var id = document.currentScript.id = 'minimob_mobile_web_options' + instanceid;
+    w[id] =  {
+      siteId : '59e7464b000074',
+      adzoneId :'59f337f2000083',
+      userId :'1373672288'
+    };
+    var script = document.createElement('script');
+    script.id = 'minimob_mobile_web_initscript' + instanceid;
+    script.src = 'http://md-bidder-01.internetq.corp/adserver/adserving.js';
+    var minimob_mobile_web_options = document.currentScript;
+    if (minimob_mobile_web_options != null) minimob_mobile_web_options.parentNode.insertBefore(script, minimob_mobile_web_options.nextSibling);
+  })(window);
 </script>
 <script id="minimob_mobile_web_initscript" src="http://bidder-dev.rtad.bid/adserver/adserving.js"></script>
 <a href="index.html">index</a>
