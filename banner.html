@@ -30,11 +30,29 @@
   if (minimob_mobile_web_options != null) minimob_mobile_web_options.parentNode.insertBefore(script, minimob_mobile_web_options.nextSibling);
   })(window);
 </script>
-
-<script id="minimob_mobile_web_initscript" src="http://bidder-dev.rtad.bid/adserver/adserving.js"></script>
 <a href="index.html">index</a>
 <h1><a href="mrect.html">mrect banner</a></h1>
 <h1><a href="sticky.html">sticky banner</a></h1>
 <h1><a href="interstitial.html">overlay (interstitial)</a></h1>
+<script>
+  var dev_settings = {
+    adserver_endpoint : 'http://bidder-dev.rtad.bid',
+    x_debug_ip : '4.0.0.0'
+  };
+  (function(w) {
+    var instanceid = typeof w.mm_gen === 'undefined'?1:w.mm_gen+1;w.mm_gen = instanceid;
+    var id = document.currentScript.id = 'minimob_mobile_web_options' + instanceid;
+    w[id] =  {
+      siteId : '59e7464b000074',
+      adzoneId :'59f33584000082',
+      userId :'1373672288'
+    };
+    var script = document.createElement('script');
+    script.id = 'minimob_mobile_web_initscript' + instanceid;
+    script.src = 'http://bidder-dev.rtad.bid/adserver/adserving.js';
+    var minimob_mobile_web_options = document.currentScript;
+    if (minimob_mobile_web_options != null) minimob_mobile_web_options.parentNode.insertBefore(script, minimob_mobile_web_options.nextSibling);
+  })(window);
+</script>
 </body>
 </html>
